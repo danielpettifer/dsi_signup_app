@@ -23,5 +23,3 @@ export class MyApp {
 }
 
 ionicBootstrap(MyApp)
-
-
