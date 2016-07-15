@@ -1,4 +1,5 @@
 $balanced: #1DC9A0;
+$dark: #2C2D33;
 $light: #ffffff;
 $link-color: $light;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -7,6 +8,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	border: 0px solid;
 	border-bottom: 1px solid #1DC9A0;
 	margin-bottom: 10px;
+	background-color: transparent;
 }
 
 .centre {
@@ -28,6 +30,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 ion-view,.pane,.view {
-	background-color: #FAFAFA;
+	background-color: #EDEDED;
 }
 
