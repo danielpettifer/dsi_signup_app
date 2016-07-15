@@ -9735,5 +9735,8 @@ a.button {
   border: 0px solid;
   margin-bottom: 10px; }
 
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+  color: #1DC9A0; }
+
 ion-view, .pane, .view {
   background-color: #EDEDED; }

@@ -29,6 +29,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	margin-bottom: 10px;
 }
 
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+	color: #1DC9A0;
+}
+
 ion-view,.pane,.view {
 	background-color: #EDEDED;
 }
