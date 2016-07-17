@@ -27,4 +27,8 @@ angular.module('app.controllers', [])
 .controller('nestaCtrl', function($scope) {
 
 })
+   
+.controller('aboutDSIRegistrationCtrl', function($scope) {
+
+})
  

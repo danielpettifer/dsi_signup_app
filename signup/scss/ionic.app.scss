@@ -41,6 +41,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .padding-sides {
 	padding-left: 15%;
 	padding-right: 15%;
+	margin-bottom: 30px;
+}
+
+.register-button {
+	color: #1DC9A0;
+}
+
+.dark-bg {
+	background: #2c2d33;
+	border-color: #21232b;
 }
 
 ion-view,.pane,.view {

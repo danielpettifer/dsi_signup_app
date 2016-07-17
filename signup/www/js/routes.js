@@ -78,6 +78,12 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('aboutDSIRegistration', {
+    url: '/page9',
+    templateUrl: 'templates/aboutDSIRegistration.html',
+    controller: 'aboutDSIRegistrationCtrl'
+  })
+
 $urlRouterProvider.otherwise('/page1/page2')
 
   
