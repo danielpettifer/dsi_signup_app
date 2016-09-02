@@ -1,0 +1,78 @@
+$balanced: #1DC9A0;
+$dark: #2C2D33;
+$light: #ffffff;
+$link-color: $light;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.display-none {
+	display: none;
+}
+
+.margin-right-10 {
+	margin-right: 10px;
+	font-size: 8px;
+	font-weight: 800;
+	color: #666 !important;
+}
+
+.item-avatar-large img {
+	max-width: 150px !important;
+	max-height: 150px !important;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+}
+
+.underline {
+	border: 0px solid;
+	border-bottom: 1px solid #1DC9A0;
+	margin-bottom: 10px;
+	background-color: transparent;
+}
+
+.centre {
+	text-align: center;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 20px;
+}
+
+.height-full {
+	height: 100%;
+}
+
+.list-border-none {
+	border: 0px solid;
+	margin-bottom: 10px;
+}
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+	color: #1DC9A0;
+}
+
+.homepage-logo {
+	padding-top: 35%;
+	margin-bottom: 50px;
+}
+
+.padding-sides {
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-bottom: 30px;
+}
+
+.register-button {
+	color: #1DC9A0;
+}
+
+.dark-bg {
+	background: #2c2d33;
+	border-color: #21232b;
+}
+
+ion-view,.pane,.view {
+	background-color: #EDEDED;
+}
+
