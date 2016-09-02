@@ -52,7 +52,8 @@ angular.module('app.routes', [])
             })
 
             .state('tabsController.newRegistration', {
-                url: '/page6',
+                cache: false,
+                url: '/newRegistration',
                 views: {
                     'tab1': {
                         templateUrl: 'templates/newRegistration.html',

@@ -3,25 +3,29 @@
         <form id="newRegistration-form1" class="list">
             <label class="item item-input item-floating-label underline" id="newRegistration-input1" name="Name">
                 <span class="input-label">Name</span>
-                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Name" ng-model="data.firstName">
             </label>
             <label class="item item-input item-floating-label underline" id="newRegistration-input10" name="Surname">
                 <span class="input-label">Surname</span>
-                <input type="text" placeholder="Surname">
+                <input type="text" placeholder="Surname" ng-model="data.lastName">
             </label>
-            <label class="item item-input item-floating-label underline" id="newRegistration-input2" name="Registration email">
+            <label class="item item-input item-floating-label underline" id="newRegistration-input2"
+                   name="Registration email">
                 <span class="input-label">Email</span>
-                <input type="email" placeholder="Email">
+                <input type="email" placeholder="Email" ng-model="data.email">
             </label>
             <label class="item item-input item-floating-label underline" id="newRegistration-input3" name="Job title">
                 <span class="input-label">Job title</span>
-                <input type="text" placeholder="Job title">
+                <input type="text" placeholder="Job title" ng-model="data.jobTitle">
             </label>
-            <label class="item item-input item-floating-label underline" id="newRegistration-input11" name="Organisation">
+            <label class="item item-input item-floating-label underline" id="newRegistration-input11"
+                   name="Organisation">
                 <span class="input-label">Organisation</span>
-                <input type="text" placeholder="Organisation">
+                <input type="text" placeholder="Organisation" ng-model="data.organisation">
             </label>
-            <a ui-sref="tabsController.register" id="newRegistration-button3" class="button button-balanced button-small button-block icon ion-android-add"></a>
+            <button id="newRegistration-button3" class="button button-balanced  button-block">
+                Complete registration
+            </button>
         </form>
     </ion-content>
 </ion-view>
