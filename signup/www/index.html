@@ -44,8 +44,12 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/routes.js"></script>
-    <script src="js/services.js"></script>
+    
+     
     <script src="js/directives.js"></script>
+     
+    <script src="js/services.js"></script>
+    
 
     <!-- Only required for Tab projects w/ pages in multiple tabs 
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
@@ -69,12 +73,14 @@
                 <div class="title">Menu</div>
             </ion-header-bar>
             <ion-content padding="false" class="side-menu-left has-header">
-                <ion-list id="menu-list4" class=" " data-componentid="list4">
-                    <ion-item class="item-icon-left dark  " id="menu-list-item16" ui-sref="aboutDSIRegistration" menu-close="" data-componentid="list-item16">
-                        <i class="icon ion-ios-information"></i>About the DSI Registration App</ion-item>
-                    <ion-item class="item-icon-left dark  " id="menu-list-item17" data-componentid="list-item17">
-                        <i class="icon ion-ios-person"></i>Your profile</ion-item>
-                    <ion-item class="item-icon-left dark  " id="menu-list-item18" data-componentid="list-item18">
+                <ion-list id="menu-list4" data-componentid="list4">
+                    <ion-item class="item-icon-left dark" id="menu-list-item16" ui-sref="tabsController.register" menu-close="" data-componentid="list-item16">
+                        <i class="icon ion-ios-plus-empty"></i>Register</ion-item>
+                    <ion-item class="item-icon-left dark" id="menu-list-item19" ui-sref="aboutDSIRegistration" menu-close="" data-componentid="list-item19">
+                        <i class="icon ion-ios-information-empty"></i>About the DSI Registration App</ion-item>
+                    <ion-item class="item-icon-left dark" id="menu-list-item17" ui-sref="profile" menu-close="" data-componentid="list-item17">
+                        <i class="icon ion-ios-person-outline"></i>Your profile</ion-item>
+                    <ion-item class="item-icon-left dark" id="menu-list-item18" data-componentid="list-item18">
                         <i class="icon ion-log-out"></i>Sign out</ion-item>
                 </ion-list>
             </ion-content>

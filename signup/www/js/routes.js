@@ -84,6 +84,12 @@ angular.module('app.routes', [])
     controller: 'aboutDSIRegistrationCtrl'
   })
 
+  .state('profile', {
+    url: '/page10',
+    templateUrl: 'templates/profile.html',
+    controller: 'profileCtrl'
+  })
+
 $urlRouterProvider.otherwise('/page1/page2')
 
   
