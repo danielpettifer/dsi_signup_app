@@ -8,6 +8,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	display: none;
 }
 
+.item-avatar-large img {
+	max-width: 150px !important;
+	max-height: 150px !important;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+}
+
 .underline {
 	border: 0px solid;
 	border-bottom: 1px solid #1DC9A0;
