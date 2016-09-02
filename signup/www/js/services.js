@@ -1,12 +1,23 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
+    .factory('BlankFactory', [function () {
 
-}])
+    }])
 
-.service('BlankService', [function(){
+    .factory('sessionService', ['$http', function ($http) {
+        return {
+            set: function (key, value) {
+                return localStorage.setItem(key, JSON.stringify(value));
+            },
+            get: function (key) {
+                return JSON.parse(localStorage.getItem(key));
+            },
+            destroy: function (key) {
+                return localStorage.removeItem(key);
+            }
+        };
+    }])
 
-}]);
     .service('BlankService', [function () {
 
     }])
@@ -53,13 +64,11 @@ angular.module('app.services', [])
     .service('RegisterService', function ($q, $http, sessionService) {
         return {
             registerNewUser: function (data) {
-                console.log(data);
-
                 var deferred = $q.defer();
                 var promise = deferred.promise;
 
-                // $http.get("http://test.digitalsocial.eu/app-register-user", {
-                $http.get("https://localhost/DSI4EU/www/app-register-user", {
+                $http.get("http://test.digitalsocial.eu/app-register-user", {
+                // $http.get("https://localhost/DSI4EU/www/app-register-user", {
                     params: {
                         firstName: data.firstName,
                         lastName: data.lastName,
@@ -69,12 +78,11 @@ angular.module('app.services', [])
                     }
                 })
                     .success(function (data) {
-                        console.log(data);
                         if (data.code == 'ok') {
                             sessionService.set('user', data.user);
-                            deferred.resolve('Welcome !');
+                            deferred.resolve('New user successfully created');
                         } else {
-                            deferred.reject('Please check your credentials!');
+                            deferred.reject(data.errors);
                         }
                     })
                     .error(function (data) {
@@ -92,6 +100,4 @@ angular.module('app.services', [])
                 return promise;
             }
         }
-    })
-
-;
+    });

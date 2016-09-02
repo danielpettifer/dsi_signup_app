@@ -9,11 +9,11 @@ angular.module('app.routes', [])
         $stateProvider
 
 
-            .state('tabsController.register', {
+            .state('tabsController.registerUser', {
                 url: '/register',
                 views: {
                     'tab1': {
-                        templateUrl: 'templates/register.html',
+                        templateUrl: 'templates/registerUser.html',
                         controller: 'registerCtrl'
                     }
                 }

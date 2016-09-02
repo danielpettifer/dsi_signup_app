@@ -23,8 +23,9 @@
                 <span class="input-label">Organisation</span>
                 <input type="text" placeholder="Organisation" ng-model="data.organisation">
             </label>
-            <button id="newRegistration-button3" class="button button-balanced  button-block">
-                Complete registration
+            <button id="newRegistration-button3" class="button button-balanced  button-block" ng-click="save()"
+                    ng-class="{'ion-load-a': loading}">
+                {{loading == true ? 'Loading...' : 'Complete registration'}}
             </button>
         </form>
     </ion-content>
