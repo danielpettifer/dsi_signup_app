@@ -4,6 +4,10 @@ $light: #ffffff;
 $link-color: $light;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "../www/lib/ionic/scss";
+.display-none {
+	display: none;
+}
+
 .underline {
 	border: 0px solid;
 	border-bottom: 1px solid #1DC9A0;

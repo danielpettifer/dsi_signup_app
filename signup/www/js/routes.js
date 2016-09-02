@@ -90,6 +90,12 @@ angular.module('app.routes', [])
     controller: 'profileCtrl'
   })
 
+  .state('login', {
+    url: '/page11',
+    templateUrl: 'templates/login.html',
+    controller: 'loginCtrl'
+  })
+
 $urlRouterProvider.otherwise('/page1/page2')
 
   

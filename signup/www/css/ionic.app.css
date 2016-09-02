@@ -9715,6 +9715,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.display-none {
+  display: none; }
+
 .underline {
   border: 0px solid;
   border-bottom: 1px solid #1DC9A0;
