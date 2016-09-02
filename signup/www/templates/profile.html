@@ -2,13 +2,14 @@
     <ion-content padding="true" class="has-header">
         <div class="spacer" style="width: 300px; height: 34px;"></div>
         <div class="item-avatar-large" style="margin-left: -10px; width: calc(100% + 20px);">
-            <img src="img/71Ir7fAPTE6uSFBHAwOQ_6109105.png" width="100%" height="" style="display:block;">
+            <img ng-src="https://test.digitalsocial.eu/images/users/profile/{{user.profilePic}}"
+                 width="100%" height="" style="display:block;">
         </div>
         <div class="spacer" style="width: 300px; height: 34px;"></div>
-        <h4 id="profile-heading2" style="color:#000000;text-align:center;">Daniel Pettifer</h4>
+        <h4 id="profile-heading2" style="color:#000000;text-align:center;">{{user.name}}</h4>
         <div id="profile-markdown1" style="color:#000000;text-align:center;">
-            <p>Digital Product Manager at
-                <strong>Nesta</strong>
+            <p>{{user.jobTitle}}
+                <strong>{{user.organisation}}</strong>
             </p>
         </div>
     </ion-content>

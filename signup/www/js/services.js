@@ -30,6 +30,7 @@ angular.module('app.services', [])
                 var promise = deferred.promise;
 
                 $http.get("https://test.digitalsocial.eu/app-login", {
+                // $http.get("https://localhost/DSI4EU/www/app-login", {
                     params: {
                         "email": name, "password": pw
                     }
@@ -37,7 +38,7 @@ angular.module('app.services', [])
                     .success(function (data) {
                         console.log(data);
                         if (data.code == 'ok') {
-                            sessionService.set('user', {id: 1, name: 'Alecs'});
+                            sessionService.set('user', data.user);
                             deferred.resolve('Welcome !');
                         } else {
                             deferred.reject('Please check your credentials!');
