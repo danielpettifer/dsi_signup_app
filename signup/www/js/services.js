@@ -10,7 +10,10 @@ angular.module('app.services', [])
                 return localStorage.setItem(key, JSON.stringify(value));
             },
             get: function (key) {
-                return JSON.parse(localStorage.getItem(key));
+                if (localStorage.getItem(key) != null && localStorage.getItem(key) != 'undefined')
+                    return JSON.parse(localStorage.getItem(key));
+                else
+                    return null;
             },
             destroy: function (key) {
                 return localStorage.removeItem(key);
@@ -25,7 +28,6 @@ angular.module('app.services', [])
     .service('LoginService', function ($q, $http, sessionService) {
         return {
             loginUser: function (name, pw) {
-                console.log(name, pw);
                 var deferred = $q.defer();
                 var promise = deferred.promise;
 
@@ -36,7 +38,6 @@ angular.module('app.services', [])
                     }
                 })
                     .success(function (data) {
-                        console.log(data);
                         if (data.code == 'ok') {
                             sessionService.set('user', data.user);
                             deferred.resolve('Welcome !');
@@ -68,7 +69,7 @@ angular.module('app.services', [])
                 var promise = deferred.promise;
 
                 $http.get("http://test.digitalsocial.eu/app-register-user", {
-                // $http.get("https://localhost/DSI4EU/www/app-register-user", {
+                    // $http.get("https://localhost/DSI4EU/www/app-register-user", {
                     params: {
                         firstName: data.firstName,
                         lastName: data.lastName,
@@ -79,7 +80,6 @@ angular.module('app.services', [])
                 })
                     .success(function (data) {
                         if (data.code == 'ok') {
-                            sessionService.set('user', data.user);
                             deferred.resolve('New user successfully created');
                         } else {
                             deferred.reject(data.errors);

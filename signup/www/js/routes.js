@@ -10,6 +10,7 @@ angular.module('app.routes', [])
 
 
             .state('tabsController.registerUser', {
+                cache: false,
                 url: '/register',
                 views: {
                     'tab1': {

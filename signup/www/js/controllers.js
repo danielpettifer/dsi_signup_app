@@ -32,8 +32,11 @@ angular.module('app.controllers', [])
 
         }])
 
-    .controller('registerCtrl', function ($scope, $stateParams) {
-
+    .controller('registerCtrl', function ($scope, $state, sessionService) {
+        if (!sessionService.get('user')) {
+            $state.go('login');
+            return;
+        }
     })
 
     .controller('newRegistrationCtrl', function ($scope, $ionicPopup, $state, sessionService, RegisterService) {
@@ -43,9 +46,13 @@ angular.module('app.controllers', [])
             $scope.loading = true;
             RegisterService.registerNewUser($scope.data)
                 .success(function (data) {
+                    $scope.loading = false;
                     var alertPopup = $ionicPopup.alert({
                         title: 'Success',
                         template: data
+                    });
+                    alertPopup.then(function () {
+                        $state.go('tabsController.registerUser');
                     });
                 })
                 .error(function (data) {
