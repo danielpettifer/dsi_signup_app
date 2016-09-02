@@ -88,7 +88,7 @@ angular.module('app.controllers', [])
 
     .controller('loginCtrl', function ($scope, LoginService, $ionicPopup, $state, sessionService) {
         if (sessionService.get('user')) {
-            $state.go('tabsController.register');
+            $state.go('tabsController.registerUser');
             return;
         }
 
@@ -97,7 +97,7 @@ angular.module('app.controllers', [])
         $scope.login = function () {
             $scope.loading = true;
             LoginService.loginUser($scope.data.username, $scope.data.password).success(function (data) {
-                $state.go('tabsController.register');
+                $state.go('tabsController.registerUser');
             }).error(function (data) {
                 $scope.loading = false;
                 var alertPopup = $ionicPopup.alert({
