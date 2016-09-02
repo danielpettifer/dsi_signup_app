@@ -29,7 +29,7 @@ angular.module('app.services', [])
                 var deferred = $q.defer();
                 var promise = deferred.promise;
 
-                $http.get("http://localhost/dsi-app/server/login.php", {
+                $http.get("https://test.digitalsocial.eu/app-login", {
                     params: {
                         "email": name, "password": pw
                     }

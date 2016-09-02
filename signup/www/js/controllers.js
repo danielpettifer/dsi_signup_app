@@ -75,13 +75,13 @@ angular.module('app.controllers', [])
     .controller('loginCtrl', function ($scope, LoginService, $ionicPopup, $state, sessionService) {
         if (sessionService.get('user')) {
             $state.go('tabsController.register');
+            return;
         }
 
         $scope.data = {};
 
         $scope.login = function () {
             LoginService.loginUser($scope.data.username, $scope.data.password).success(function (data) {
-                // $state.go('profile');
                 $state.go('tabsController.register');
             }).error(function (data) {
                 var alertPopup = $ionicPopup.alert({
@@ -92,7 +92,7 @@ angular.module('app.controllers', [])
         }
     })
 
-    .controller('logoutCtrl', function ($state, sessionService) {
+    .controller('logoutCtrl', function ($scope, $stateParams, $state, sessionService) {
         sessionService.destroy('user');
         $state.go('login');
     });

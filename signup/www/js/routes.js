@@ -10,7 +10,7 @@ angular.module('app.routes', [])
 
 
             .state('tabsController.register', {
-                url: '/page2',
+                url: '/register',
                 views: {
                     'tab1': {
                         templateUrl: 'templates/register.html',
@@ -84,23 +84,23 @@ angular.module('app.routes', [])
             })
 
             .state('profile', {
-                url: '/page10',
+                url: '/profile',
                 templateUrl: 'templates/profile.html',
                 controller: 'profileCtrl'
             })
 
             .state('login', {
-                url: '/page11',
+                url: '/login',
                 templateUrl: 'templates/login.html',
                 controller: 'loginCtrl'
             })
 
             .state('logout', {
+                cache: false,
                 url: '/logout',
+                templateUrl: 'templates/login.html',
                 controller: 'logoutCtrl'
-            })
+            });
 
-        ;
-
-        $urlRouterProvider.otherwise('/page11')
+        $urlRouterProvider.otherwise('/login');
     });
