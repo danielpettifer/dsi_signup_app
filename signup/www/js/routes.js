@@ -84,12 +84,14 @@ angular.module('app.routes', [])
             })
 
             .state('profile', {
+                cache: false,
                 url: '/profile',
                 templateUrl: 'templates/profile.html',
                 controller: 'profileCtrl'
             })
 
             .state('login', {
+                cache: false,
                 url: '/login',
                 templateUrl: 'templates/login.html',
                 controller: 'loginCtrl'

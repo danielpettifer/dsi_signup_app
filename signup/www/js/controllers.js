@@ -77,9 +77,11 @@ angular.module('app.controllers', [])
         $scope.data = {};
 
         $scope.login = function () {
+            $scope.loading = true;
             LoginService.loginUser($scope.data.username, $scope.data.password).success(function (data) {
                 $state.go('tabsController.register');
             }).error(function (data) {
+                $scope.loading = false;
                 var alertPopup = $ionicPopup.alert({
                     title: 'Login failed!',
                     template: data
