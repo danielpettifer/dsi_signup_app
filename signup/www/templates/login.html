@@ -1,6 +1,6 @@
-<ion-view title="Login" hide-back-button="true" id="page11" st yle="background-color:#FFFFFF;">
+<ion-view title="Login" hide-back-button="true" id="page11" style="background-color:#FFFFFF;">
     <ion-nav-buttons></ion-nav-buttons>
-    <ion-content padding="true" class="has-header">
+    <ion-content padding="true" scroll="false" class="has-header">
         <form id="login-form3" class="list">
             <div class="spacer" style="width: 300px; height: 57px;"></div>
             <ion-list id="login-list5">
@@ -15,7 +15,8 @@
                 </label>
             </ion-list>
             <div class="spacer" style="width: 300px; height: 29px;"></div>
-            <button id="login-button4" class="button button-balanced  button-block button-clear" ng-click="login()"
+            <button id="login-button4" ng-click="login()"
+					style="font-weight:500;" class="button button-balanced button-large button-block button-clear"
                     ng-class="{'ion-load-a': loading}">
                 {{loading == true ? 'Loading...' : 'Login'}}
             </button>
