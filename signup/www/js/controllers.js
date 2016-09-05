@@ -39,14 +39,16 @@ angular.module('app.controllers', [])
         }
     })
 
-    .controller('newRegistrationCtrl', function ($scope, $ionicPopup, $state, sessionService, RegisterService) {
-        $scope.data = {};
+    .controller('newRegistrationCtrl', function ($rootScope, $scope, $ionicPopup, $state, sessionService, RegisterService) {
+        if (!$rootScope.data)
+            $rootScope.data = {};
 
         $scope.save = function () {
             $scope.loading = true;
-            RegisterService.registerNewUser($scope.data)
+            RegisterService.registerNewUser($rootScope.data)
                 .success(function (data) {
                     $scope.loading = false;
+                    $rootScope.data = {};
                     var alertPopup = $ionicPopup.alert({
                         title: 'Success',
                         template: data

@@ -1,7 +1,8 @@
-<ion-view title="Login" hide-back-button="true" id="page11" style="background-color:#FFFFFF;">
+<ion-view title="Login" hide-back-button="true" id="page11" st	yle="background-color:#FFFFFF;">
     <ion-nav-buttons></ion-nav-buttons>
     <ion-content padding="true" class="has-header">
         <form id="login-form3" class="list">
+            <div class="spacer" style="width: 300px; height: 57px;"></div>
             <ion-list id="login-list5">
                 <label class="item item-input item-floating-label underline" id="login-input7"
                        name="Organisation email">
@@ -13,13 +14,19 @@
                     <input type="password" placeholder="Password" ng-model="data.password">
                 </label>
             </ion-list>
-            <div class="spacer" style="height: 40px;"></div>
-            <button id="login-button4" class="button button-balanced  button-block" ng-click="login()"
+            <div class="spacer" style="width: 300px; height: 29px;"></div>
+            <button id="login-button4" class="button button-balanced  button-block button-clear" ng-click="login()"
                     ng-class="{'ion-load-a': loading}">
                 {{loading == true ? 'Loading...' : 'Login'}}
             </button>
             <a ui-sref="signup" id="login-button5"
                class="button button-positive  button-block button-clear display-none">Or create an account</a>
+            <div>
+                <p class="note">
+                    *Login with your
+                    <strong>digitalsocial.eu</strong>credentials
+                </p>
+            </div>
         </form>
     </ion-content>
 </ion-view>

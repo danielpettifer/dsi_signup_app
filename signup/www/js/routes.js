@@ -20,7 +20,7 @@ angular.module('app.routes', [])
                 }
             })
 
-            .state('tabsController.leaderboard', {
+            .state('leaderboard', {
                 url: '/page3',
                 views: {
                     'tab2': {
@@ -53,7 +53,6 @@ angular.module('app.routes', [])
             })
 
             .state('tabsController.newRegistration', {
-                cache: false,
                 url: '/newRegistration',
                 views: {
                     'tab1': {
