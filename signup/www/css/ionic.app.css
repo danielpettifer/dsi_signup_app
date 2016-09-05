@@ -9718,6 +9718,16 @@ a.button {
 .display-none {
   display: none; }
 
+.author-link {
+  color: #666;
+  font-weight: 800; }
+
+.note {
+  text-align: center;
+  font-size: 10px;
+  line-height: 15px;
+  color: #bababa; }
+
 .margin-right-10 {
   margin-right: 10px;
   font-size: 8px;
@@ -9741,7 +9751,7 @@ a.button {
   text-align: center; }
 
 .bottom {
-  position: absolute;
+  position: relative;
   bottom: 20px; }
 
 .height-full {
@@ -9750,6 +9760,12 @@ a.button {
 .list-border-none {
   border: 0px solid;
   margin-bottom: 10px; }
+
+.tab-item .icon {
+  color: #000; }
+
+.tab-item {
+  color: #000; }
 
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
   color: #1DC9A0; }
@@ -9769,6 +9785,56 @@ a.button {
 .dark-bg {
   background: #2c2d33;
   border-color: #21232b; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s; }
+
+.fadeInUp2 {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+.fadeInUp3 {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s; }
+
+.fadeInUp4 {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s; }
 
 ion-view, .pane, .view {
   background-color: #EDEDED; }
