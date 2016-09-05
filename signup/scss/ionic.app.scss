@@ -92,6 +92,69 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	border-color: #21232b;
 }
 
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+	
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+	
+}
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+	
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+	
+}
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	-webkit-animation-duration: 0.25s;
+	animation-duration: 0.25s;
+}
+
+.fadeInUp2 {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+}
+
+.fadeInUp3 {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	-webkit-animation-duration: 0.75s;
+	animation-duration: 0.75s;
+}
+
+.fadeInUp4 {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
 ion-view,.pane,.view {
 	background-color: #EDEDED;
 }
