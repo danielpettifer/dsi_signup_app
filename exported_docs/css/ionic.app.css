@@ -9718,6 +9718,10 @@ a.button {
 .display-none {
   display: none; }
 
+.author-link {
+  color: #666;
+  font-weight: 800; }
+
 .margin-right-10 {
   margin-right: 10px;
   font-size: 8px;
@@ -9741,7 +9745,7 @@ a.button {
   text-align: center; }
 
 .bottom {
-  position: absolute;
+  position: relative;
   bottom: 20px; }
 
 .height-full {
@@ -9750,6 +9754,12 @@ a.button {
 .list-border-none {
   border: 0px solid;
   margin-bottom: 10px; }
+
+.tab-item .icon {
+  color: #000; }
+
+.tab-item {
+  color: #000; }
 
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
   color: #1DC9A0; }

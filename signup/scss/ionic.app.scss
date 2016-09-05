@@ -8,6 +8,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	display: none;
 }
 
+.author-link {
+	color: #666;
+	font-weight: 800;
+}
+
 .margin-right-10 {
 	margin-right: 10px;
 	font-size: 8px;
@@ -35,7 +40,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .bottom {
-	position: absolute;
+	position: relative;
 	bottom: 20px;
 }
 
@@ -46,6 +51,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .list-border-none {
 	border: 0px solid;
 	margin-bottom: 10px;
+}
+
+.tab-item .icon {
+	color: #000;
+}
+
+.tab-item {
+	color: #000;
 }
 
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
