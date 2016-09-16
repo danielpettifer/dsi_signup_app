@@ -94,6 +94,13 @@ angular.module('app.routes', [])
                 controller: 'aboutDSIRegistrationCtrl'
             })
 
+            .state('events', {
+                cache: false,
+                url: '/events',
+                templateUrl: 'templates/events.html',
+                controller: 'eventsCtrl'
+            })
+
             .state('profile', {
                 cache: false,
                 url: '/profile',

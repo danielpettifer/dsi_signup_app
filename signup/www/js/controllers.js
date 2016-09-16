@@ -146,4 +146,8 @@ angular.module('app.controllers', [])
     .controller('logoutCtrl', function ($scope, $stateParams, $state, sessionService) {
         sessionService.destroy('user');
         $state.go('login');
+    })
+
+    .controller('eventsCtrl', function ($scope) {
+
     });
