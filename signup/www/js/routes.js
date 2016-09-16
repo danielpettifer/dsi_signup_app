@@ -39,6 +39,16 @@ angular.module('app.routes', [])
                     }
                 }
             })
+        
+        .state('tabsController.events', {
+                url: '/events',
+                views: {
+                    'tab3': {
+                        templateUrl: 'templates/events.html',
+                        controller: 'eventsCtrl'
+                    }
+                }
+            })
 
             .state('tabsController', {
                 url: '/page1',

@@ -2,6 +2,7 @@
     "jscodehints.detectedExclusions": [
         "/Users/danielpettifer/Desktop/dsi app/dsi_signup_app/signup/platforms/ios/build/device/signup.app/www/cordova-js-src/exec.js",
         "/Users/danielpettifer/Desktop/dsi app/dsi_signup_app/signup/www/js/controllers.js",
-        "/Users/danielpettifer/Desktop/dsi app/dsi_signup_app/signup/platforms/ios/build/device/signup.app/www/lib/ionic/js/ionic-angular.min.js"
+        "/Users/danielpettifer/Desktop/dsi app/dsi_signup_app/signup/platforms/ios/build/device/signup.app/www/lib/ionic/js/ionic-angular.min.js",
+        "/Users/danielpettifer/Desktop/dsi app/dsi_signup_app/signup/platforms/ios/build/device/signup.app/www/cordova_plugins.js"
     ]
 }
