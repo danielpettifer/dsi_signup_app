@@ -20,16 +20,6 @@ angular.module('app.routes', [])
                 }
             })
 
-            .state('leaderboard', {
-                url: '/page3',
-                views: {
-                    'tab2': {
-                        templateUrl: 'templates/leaderboard.html',
-                        controller: 'leaderboardCtrl'
-                    }
-                }
-            })
-
             .state('tabsController.settings', {
                 url: '/page4',
                 views: {
@@ -83,7 +73,7 @@ angular.module('app.routes', [])
                 views: {
                     'tab2': {
                         templateUrl: 'templates/leaderBoard.html',
-                        controller: 'nestaCtrl'
+                        controller: 'leaderboardCtrl'
                     }
                 }
             })
