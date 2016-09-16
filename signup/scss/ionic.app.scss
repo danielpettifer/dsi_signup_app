@@ -1,5 +1,5 @@
 $balanced: #1DC9A0;
-$dark: #2C2D33;
+$dark: #000000;
 $light: #ffffff;
 $link-color: $light;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -37,7 +37,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .underline {
 	border: 0px solid;
-	border-bottom: 1px solid #1DC9A0;
+	border-bottom: 1px solid #000000;
 	margin-bottom: 10px;
 	background-color: transparent;
 }
@@ -69,7 +69,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
-	color: #1DC9A0;
+	color: #000;
 }
 
 .homepage-logo {
