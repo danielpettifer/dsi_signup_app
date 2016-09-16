@@ -24,7 +24,7 @@ angular.module('app.controllers', [])
 
         }])
 
-  .controller('eventsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+    .controller('eventsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
         function ($scope, $stateParams) {
@@ -83,13 +83,31 @@ angular.module('app.controllers', [])
 
         }])
 
-    .controller('nestaCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-        function ($scope, $stateParams) {
+    .controller('nestaCtrl', function ($scope, $stateParams, UrlService, $http, sessionService, $ionicPopup) {
+        $scope.imgPath = UrlService.server + '/images/users/profile/';
 
-
-        }])
+        $http.get(UrlService.server + "/app-leader-board", {
+            params: {
+                userID: sessionService.get('user').id
+            }
+        })
+            .success(function (data) {
+                if (data.code == 'ok') {
+                    $scope.leaderBoard = data.leaderBoard;
+                } else {
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Application error',
+                        template: 'An error occurred. Please retry'
+                    });
+                }
+            })
+            .error(function (data) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Server error',
+                    template: 'An error occurred. Please retry'
+                });
+            });
+    })
 
     .controller('aboutDSIRegistrationCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function

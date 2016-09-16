@@ -82,7 +82,7 @@ angular.module('app.routes', [])
                 url: '/page8',
                 views: {
                     'tab2': {
-                        templateUrl: 'templates/nesta.html',
+                        templateUrl: 'templates/leaderBoard.html',
                         controller: 'nestaCtrl'
                     }
                 }

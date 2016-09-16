@@ -21,18 +21,23 @@ angular.module('app.services', [])
         };
     }])
 
+    .service('UrlService', [function () {
+        return {
+            server: 'http://test.digitalsocial.eu'
+        };
+    }])
+
     .service('BlankService', [function () {
 
     }])
 
-    .service('LoginService', function ($q, $http, sessionService) {
+    .service('LoginService', function ($q, $http, sessionService, UrlService) {
         return {
             loginUser: function (name, pw) {
                 var deferred = $q.defer();
                 var promise = deferred.promise;
 
-                $http.get("http://test.digitalsocial.eu/app-login", {
-                    // $http.get("https://localhost/DSI4EU/www/app-login", {
+                $http.get(UrlService.server + "/app-login", {
                     params: {
                         "email": name, "password": pw
                     }
@@ -62,14 +67,13 @@ angular.module('app.services', [])
         }
     })
 
-    .service('RegisterService', function ($q, $http, sessionService) {
+    .service('RegisterService', function ($q, $http, sessionService, UrlService) {
         return {
             registerNewUser: function (data) {
                 var deferred = $q.defer();
                 var promise = deferred.promise;
 
-                $http.get("http://test.digitalsocial.eu/app-register-user", {
-                    // $http.get("https://localhost/DSI4EU/www/app-register-user", {
+                $http.get(UrlService.server + "/app-register-user", {
                     params: {
                         userID: sessionService.get('user').id,
                         firstName: data.firstName,
