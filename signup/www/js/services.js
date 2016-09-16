@@ -71,6 +71,7 @@ angular.module('app.services', [])
                 $http.get("http://test.digitalsocial.eu/app-register-user", {
                     // $http.get("https://localhost/DSI4EU/www/app-register-user", {
                     params: {
+                        userID: sessionService.get('user').id,
                         firstName: data.firstName,
                         lastName: data.lastName,
                         email: data.email,
