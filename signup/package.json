@@ -1,7 +1,7 @@
 {
   "name": "signup",
   "version": "1.1.1",
-  "description": "signup: An Ionic project",
+  "description": "signup",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
