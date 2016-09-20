@@ -1,10 +1,26 @@
 <ion-view>
     <ion-nav-title>{{event.title}}</ion-nav-title>
     <ion-content padding="false" class="manual-remove-top-padding has-header" scroll="true">
-        <p>{{event.title}}</p>
-        <p>{{event.shortDescription}}</p>
-        <p>{{event.startDay}}</p>
-        <p>{{event.country}}</p>
-        <p>{{event.region}}</p>
+        <div class="list card">
+
+  <div class="item item-avatar">
+<!--    <img src="mcfly.jpg">-->
+    <h2>{{event.title}}</h2>
+    <p>{{event.startDay}}</p>
+  </div>
+
+  <div class="item item-body">
+<!--    <img class="full-image" src="delorean.jpg">-->
+      <h3>About the {{event.title}}</h3>
+    <p>
+     {{event.shortDescription}}
+    </p>
+    <p>
+      <a class="subdued">{{event.region}}</a>
+      <a class="subdued">{{event.country}}</a>
+    </p>
+  </div>
+
+</div>
     </ion-content>
 </ion-view>
