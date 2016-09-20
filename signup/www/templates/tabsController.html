@@ -1,13 +1,16 @@
 <ion-view title="Tabs Controller" id="page1">
     <ion-tabs class="tabs-light tabs-icon-top" id="tabsController-tabs1">
-        <ion-tab title="Register" icon="ion-ios-plus-empty" href="#/page1/page2" id="tabsController-tab1">
-            <ion-nav-view name="tab1"></ion-nav-view>
+        <ion-tab title="Register" icon="ion-ios-plus-empty" ui-sref="tabsController.registerUser"
+                 id="tabsController-tab1">
+            <ion-nav-view name="registerView"></ion-nav-view>
         </ion-tab>
-        <ion-tab title="Leaderboard" icon="ion-ios-people-outline" href="#/page1/page8" id="tabsController-tab2">
-            <ion-nav-view name="tab2"></ion-nav-view>
+        <ion-tab title="Leaderboard" icon="ion-ios-people-outline" ui-sref="tabsController.leaderboard"
+                 id="tabsController-tab2">
+            <ion-nav-view name="leaderBoardView"></ion-nav-view>
         </ion-tab>
-        <ion-tab title="Events" icon="ion-ios-clock-outline" href="#/page1/events" id="tabsController-tab3">
-            <ion-nav-view name="tab3"></ion-nav-view>
+        <ion-tab title="Events" icon="ion-ios-clock-outline" ui-sref="tabsController.events"
+                 id="tabsController-tab3">
+            <ion-nav-view name="eventsView"></ion-nav-view>
         </ion-tab>
     </ion-tabs>
 </ion-view>

@@ -9,57 +9,37 @@ angular.module('app.routes', [])
         $stateProvider
 
 
-            .state('tabsController.registerUser', {
-                cache: false,
-                url: '/register',
-                views: {
-                    'tab1': {
-                        templateUrl: 'templates/registerUser.html',
-                        controller: 'registerCtrl'
-                    }
-                }
-            })
-
-            .state('tabsController.settings', {
-                url: '/page4',
-                views: {
-                    'tab3': {
-                        templateUrl: 'templates/settings.html',
-                        controller: 'settingsCtrl'
-                    }
-                }
-            })
-        
-        .state('tabsController.events', {
-                url: '/events',
-                views: {
-                    'tab3': {
-                        templateUrl: 'templates/events.html',
-                        controller: 'eventsCtrl'
-                    }
-                }
-            })
-
             .state('tabsController', {
                 url: '/page1',
                 templateUrl: 'templates/tabsController.html',
                 abstract: true
             })
 
-            .state('page', {
-                url: '/page5',
-                templateUrl: 'templates/page.html',
-                controller: 'pageCtrl'
+            .state('tabsController.registerUser', {
+                cache: false,
+                url: '/register',
+                views: {
+                    'registerView': {
+                        templateUrl: 'templates/registerUser.html',
+                        controller: 'registerCtrl'
+                    }
+                }
             })
 
             .state('tabsController.newRegistration', {
                 url: '/newRegistration',
                 views: {
-                    'tab1': {
+                    'registerView': {
                         templateUrl: 'templates/newRegistration.html',
                         controller: 'newRegistrationCtrl'
                     }
                 }
+            })
+
+            .state('settings', {
+                url: '/settings',
+                templateUrl: 'templates/settings.html',
+                controller: 'settingsCtrl'
             })
 
             .state('signup', {
@@ -68,10 +48,10 @@ angular.module('app.routes', [])
                 controller: 'signupCtrl'
             })
 
-            .state('tabsController.nesta', {
-                url: '/page8',
+            .state('tabsController.leaderboard', {
+                url: '/leaderboard',
                 views: {
-                    'tab2': {
+                    'leaderBoardView': {
                         templateUrl: 'templates/leaderBoard.html',
                         controller: 'leaderboardCtrl'
                     }
@@ -79,16 +59,29 @@ angular.module('app.routes', [])
             })
 
             .state('aboutDSIRegistration', {
-                url: '/page9',
+                url: '/about',
                 templateUrl: 'templates/aboutDSIRegistration.html',
                 controller: 'aboutDSIRegistrationCtrl'
             })
 
-            .state('events', {
-                cache: false,
+            .state('tabsController.events', {
                 url: '/events',
-                templateUrl: 'templates/events.html',
-                controller: 'eventsCtrl'
+                views: {
+                    'eventsView': {
+                        templateUrl: 'templates/events.html',
+                        controller: 'eventsCtrl'
+                    }
+                }
+            })
+
+            .state('tabsController.event', {
+                url: '/event/:id',
+                views: {
+                    'eventsView': {
+                        templateUrl: 'templates/event.html',
+                        controller: 'eventCtrl'
+                    }
+                }
             })
 
             .state('profile', {
@@ -113,4 +106,5 @@ angular.module('app.routes', [])
             });
 
         $urlRouterProvider.otherwise('/login');
-    });
+    })
+;

@@ -97,7 +97,7 @@ angular.module('app.controllers', [])
                 .error(function (data) {
                     var alertPopup = $ionicPopup.alert({
                         title: 'Server error',
-                        template: 'An error occurred. Please retry'
+                        template: 'Could not load the leaderboard. Please check your internet connection.'
                     });
                 });
             $scope.$broadcast('scroll.refreshComplete');
@@ -140,11 +140,65 @@ angular.module('app.controllers', [])
         }
     })
 
-    .controller('logoutCtrl', function ($scope, $stateParams, $state, sessionService) {
+    .controller('logoutCtrl', function ($scope, $state, sessionService) {
         sessionService.destroy('user');
         $state.go('login');
     })
 
-    .controller('eventsCtrl', function ($scope) {
+    .controller('eventsCtrl', function ($scope, $http, UrlService, $ionicPopup) {
+        $scope.doRefresh = function () {
+            $http.get(UrlService.server + "/events.json")
+                .success(function (data) {
+                    if ('events' in data) {
+                        $scope.events = data.events;
+                        console.log($scope.events);
+                    } else {
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Application error',
+                            template: 'An error occurred. Please retry later.'
+                        });
+                    }
+                })
+                .error(function (data) {
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Server error',
+                        template: 'Could not load the events. Please check your internet connection.'
+                    });
+                });
+            $scope.$broadcast('scroll.refreshComplete');
+        };
 
+        $scope.doRefresh();
+    })
+
+    .controller('eventCtrl', function ($scope, $http, UrlService, $ionicPopup, $stateParams) {
+        $http.get(UrlService.server + "/events.json")
+            .success(function (data) {
+                if ('events' in data) {
+                    for(i in data.events){
+                        if(data.events[i].id == $stateParams.id){
+                            $scope.event = data.events[i];
+                            console.log($scope.event);
+                        }
+                    }
+                } else {
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Application error',
+                        template: 'An error occurred. Please retry later.'
+                    });
+                }
+            })
+            .error(function (data) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Server error',
+                    template: 'Could not load the events. Please check your internet connection.'
+                });
+            });
+        $scope.$broadcast('scroll.refreshComplete');
+    })
+
+    .controller('menuProfileCtrl', function ($scope, sessionService, UrlService) {
+        $scope.imgPath = UrlService.server + '/images/users/profile/';
+        $scope.user = sessionService.get('user');
+        console.log($scope.user);
     });

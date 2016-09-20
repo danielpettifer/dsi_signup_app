@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    
-    
+
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -16,48 +15,52 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-    
+
     <link href="css/ionic.app.css" rel="stylesheet">
-    
+
 
     <style type="text/css">
-      .platform-ios .manual-ios-statusbar-padding{
-        padding-top:20px;
-      }
-      .manual-remove-top-padding{
-        padding-top:0px; 
-      }
-      .manual-remove-top-padding .scroll{
-        padding-top:0px !important;
-      }
-      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
-        margin-left:-10px;
-        margin-right:-10px;
-      }
-      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
-        border-radius:0px;
-        border-left:0px;
-        border-right: 0px;
-      }
+        .platform-ios .manual-ios-statusbar-padding {
+            padding-top: 20px;
+        }
+
+        .manual-remove-top-padding {
+            padding-top: 0px;
+        }
+
+        .manual-remove-top-padding .scroll {
+            padding-top: 0px !important;
+        }
+
+        ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+            border-radius: 0px;
+            border-left: 0px;
+            border-right: 0px;
+        }
     </style>
 
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/routes.js"></script>
-    
-     
+
+
     <script src="js/directives.js"></script>
-     
+
     <script src="js/services.js"></script>
-    
+
 
     <!-- Only required for Tab projects w/ pages in multiple tabs 
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
 
-  </head>
-  <body ng-app="app" animation="slide-left-right-ios7">
-  <div>
+</head>
+<body ng-app="app" animation="slide-left-right-ios7">
+<div>
     <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
         <ion-side-menu-content>
             <ion-nav-bar class="bar-light">
@@ -69,23 +72,38 @@
             <ion-nav-view></ion-nav-view>
         </ion-side-menu-content>
         <ion-side-menu side="left" id="side-menu21" style="background-color:#FFFFFF;">
-            <ion-header-bar class="bar-light">
-                <div class="title">Menu</div>
-            </ion-header-bar>
-            <ion-content padding="false" class="side-menu-left has-header">
-                <ion-list id="menu-list4" data-componentid="list4">
-                    <ion-item class="item-icon-left dark" id="menu-list-item16" ui-sref="tabsController.registerUser" menu-close="" data-componentid="list-item16">
-                        <i class="icon ion-ios-plus-empty"></i>Register user</ion-item>
-                    <ion-item class="item-icon-left dark" id="menu-list-item19" ui-sref="aboutDSIRegistration" menu-close="" data-componentid="list-item19">
-                        <i class="icon ion-ios-information-outline"></i>About the DSI Registration App</ion-item>
-                    <ion-item class="item-icon-left dark" id="menu-list-item17" ui-sref="profile" menu-close="" data-componentid="list-item17">
-                        <i class="icon ion-ios-body-outline"></i>Your profile</ion-item>
-                    <ion-item class="item-icon-left dark" id="menu-list-item18" ui-sref="logout" menu-close="" data-componentid="list-item18">
-                        <i class="icon ion-ios-minus-outline"></i>Sign out</ion-item>
-                </ion-list>
-            </ion-content>
+            <div ng-controller="menuProfileCtrl">
+                <ion-header-bar class="bar-light">
+                    <div class="title">{{user.name}}</div>
+                </ion-header-bar>
+                <ion-content padding="false" class="side-menu-left has-header">
+                    <ion-list id="menu-list4" data-componentid="list4">
+                        <div class="item-avatar-large" style="text-align: center;margin:10px auto">
+                            <img ng-src="{{imgPath}}{{user.profilePic}}"/>
+                        </div>
+                        <ion-item class="item-icon-left dark" id="menu-list-item16"
+                                  ui-sref="tabsController.registerUser" menu-close="" data-componentid="list-item16">
+                            <i class="icon ion-ios-plus-empty"></i>Register user
+                        </ion-item>
+                        <ion-item class="item-icon-left dark" id="menu-list-item19" ui-sref="aboutDSIRegistration"
+                                  menu-close="" data-componentid="list-item19">
+                            <i class="icon ion-ios-information-outline"></i>About the DSI Registration App
+                        </ion-item>
+                        <!--
+                        <ion-item class="item-icon-left dark" id="menu-list-item17" ui-sref="profile" menu-close=""
+                                  data-componentid="list-item17">
+                            <i class="icon ion-ios-body-outline"></i>Your profile
+                        </ion-item>
+                        -->
+                        <ion-item class="item-icon-left dark" id="menu-list-item18" ui-sref="logout" menu-close=""
+                                  data-componentid="list-item18">
+                            <i class="icon ion-ios-minus-outline"></i>Sign out
+                        </ion-item>
+                    </ion-list>
+                </ion-content>
+            </div>
         </ion-side-menu>
     </ion-side-menus>
 </div>
-  </body>
+</body>
 </html>
