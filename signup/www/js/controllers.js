@@ -151,7 +151,6 @@ angular.module('app.controllers', [])
                 .success(function (data) {
                     if ('events' in data) {
                         $scope.events = data.events;
-                        console.log($scope.events);
                     } else {
                         var alertPopup = $ionicPopup.alert({
                             title: 'Application error',
@@ -178,7 +177,6 @@ angular.module('app.controllers', [])
                     for(i in data.events){
                         if(data.events[i].id == $stateParams.id){
                             $scope.event = data.events[i];
-                            console.log($scope.event);
                         }
                     }
                 } else {
@@ -200,5 +198,4 @@ angular.module('app.controllers', [])
     .controller('menuProfileCtrl', function ($scope, sessionService, UrlService) {
         $scope.imgPath = UrlService.server + '/images/users/profile/';
         $scope.user = sessionService.get('user');
-        console.log($scope.user);
     });
