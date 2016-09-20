@@ -23,7 +23,8 @@ angular.module('app.services', [])
 
     .service('UrlService', [function () {
         return {
-            server: 'http://test.digitalsocial.eu'
+            // server: 'http://test.digitalsocial.eu'
+            server: 'https://digitalsocial.eu'
         };
     }])
 
